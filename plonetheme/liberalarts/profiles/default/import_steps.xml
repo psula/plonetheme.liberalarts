@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="plonetheme.liberalarts.various"
+               version="20101209-01"
+               handler="plonetheme.liberalarts.setuphandlers.setupVarious"
+               title="Custom Theme: miscellaneous import steps">
+    <dependency step="skins" />
+    Various import steps that are not handled by GS import/export
+    handlers.
+  </import-step>
+</import-steps>

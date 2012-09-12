@@ -1,0 +1,16 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="plonetheme.liberalarts">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Liberal Arts Base Theme"
+      directory="profiles/default"
+      description='Extension profile for the "Liberal Arts Base Theme" Plone theme.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+      
+  
+
+</configure>

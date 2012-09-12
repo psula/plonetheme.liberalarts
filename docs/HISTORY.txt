@@ -1,0 +1,10 @@
+Changelog
+=========
+
+1.1 - Added new search functionality and styling.
+
+1.0 - First Released Version of LA Theme
+----------------
+
+* Initial release
+

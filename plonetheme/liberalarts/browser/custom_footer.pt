@@ -1,0 +1,35 @@
+<div id="portal-footer" metal:define-macro="portal_footer" i18n:domain="plone">
+
+ <div class="lamark">
+    <a tal:attributes="href string:http://www.la.psu.edu"
+    i18n:domain="plone"><img src="lamark.jpg" alt="College of the Liberal Arts" />
+    </a>
+    </div>
+  <p>The College of the Liberal Arts is committed to making its websites accessible to all users, and welcomes comments and suggestions.</p>
+  <p>Copyright &copy;<span tal:omit-tag="" tal:define="now modules/DateTime/DateTime" tal:content="now/year" /> <a href="http://www.la.psu.edu" title="College of the Liberal Arts">College of the Liberal Arts</a>,
+    <a href="http://www.psu.edu/" title="Penn State home page.">The Pennsylvania State University</a> | 
+     
+
+    <span i18n:translate="description_copyright" tal:omit-tag="">
+    <a href="http://www.psu.edu/ur/legal.html" title="Official statements on privacy, nondiscrimination, equal opportunity and copyright.">Privacy and Legal Statements</a>
+    </span>
+    <br />
+
+<tal:comment tal:condition="nothing">If there is no webmaster email address don't show</tal:comment>
+   <span tal:define="mailt  context/email_from_address"
+             tal:condition="context/email_from_address">
+    Contact the <a tal:attributes="href string:mailto:${mailt}"  
+            title="Contact the web administrator" 
+            tal:content="context/email_from_name">webmaster</a>
+  </span>
+    
+        <span i18n:translate="box_last_modified">
+    Last modified
+    </span>
+    <span tal:replace="python:here.toLocalizedTime(here.ModificationDate(),long_format=0)">
+    August 
+    </span></p>
+    
+   
+
+</div>

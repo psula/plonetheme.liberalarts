@@ -1,0 +1,15 @@
+<div id="psulogo">
+<tal:comment tal:replace="nothing">This checks to see if there is a psulogo.png within the zope environment. If it does it grabs all the attributes. If it doesn't it just grabs the stock psulogo.png from the filesystem</tal:comment>
+    
+        <div>
+            <a id="portal-logo" href="http://www.psu.edu" title="The Pennsylvania State University">
+                <img tal:replace="structure context/logo.png" alt="The Pennsylvania State University" title="The Pennsylvania State University"/>
+            </a>
+        </div>
+       
+    </div>
+
+<div id="portal_title">
+ <h2 tal:define="titlez here/portal_url/Title;">
+	<a href="" tal:attributes="href context/@@plone_portal_state/navigation_root_url" tal:content="titlez">The Title</a></h2>
+</div>

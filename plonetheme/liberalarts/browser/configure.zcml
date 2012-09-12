@@ -1,0 +1,103 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="plonetheme.liberalarts">
+
+  <!-- 'Custom Theme' Zope 3 browser layer -->
+  <interface
+      interface=".interfaces.IThemeSpecific"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="Custom Theme"
+      />
+  
+  <!-- Viewlets registration -->
+  
+   <browser:resource
+    	name="jquery.watermarkinput.js"
+    	file="jquery.watermarkinput.js" 
+    	permission="zope2.View"
+    	layer=".interfaces.IThemeSpecific"
+    />
+    
+  	<browser:resource
+    	name="watermarksettings.js"
+    	file="watermarksettings.js" 
+    	permission="zope2.View"
+    	layer=".interfaces.IThemeSpecific"
+    />
+  
+    <!-- The personal bar -->
+    <browser:viewlet
+        name="plone.personal_bar"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class="plone.app.layout.viewlets.common.PersonalBarViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+        />
+        
+    <!-- The siteactions bar -->
+    <browser:viewlet
+        name="plone.site_actions"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        class="plone.app.layout.viewlets.common.SiteActionsViewlet"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+        />
+        
+        
+      <!-- The logo -->
+    <browser:viewlet
+        name="plone.logo"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class="plone.app.layout.viewlets.common.LogoViewlet"
+        template="custom_logo.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+        />
+        
+       <!-- The search box -->
+    <browser:viewlet
+        name="plone.searchbox"
+        manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+        class=".viewlets.MultiSearchViewlet"
+        template="custom_searchbox.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope2.View" 
+        />
+        
+       <!-- Footer -->
+    <browser:viewlet
+        name="plone.footer"
+        for="*"
+        manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+        template="custom_footer.pt"
+        layer=".interfaces.IThemeSpecific"
+        permission="zope.Public"
+        />
+        
+    <browser:page
+    name="processPSUsearch"
+    for="Products.CMFCore.PortalObject.PortalObjectBase"
+    class=".processPSUsearch.processPSUsearch"
+    permission="zope2.Public"
+    layer=".interfaces.IThemeSpecific"
+    />
+        
+        
+  <!-- Zope 3 browser resources -->
+
+  <!-- Resource directory for images -->
+  <browser:resourceDirectory
+      name="plonetheme.liberalarts.images"
+      directory="images"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+  <!-- Resource directory for stylesheets -->
+  <browser:resourceDirectory
+      name="plonetheme.liberalarts.stylesheets"
+      directory="stylesheets"
+      layer=".interfaces.IThemeSpecific"
+      />
+
+</configure>
